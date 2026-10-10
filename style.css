@@ -1,0 +1,627 @@
+/* =========================================================
+   PROFESSIONAL PERSONAL PORTFOLIO WEBSITE
+   Name: KUNUSOTHU SRIJA
+   Field: web development (HTMl , CSS , JavaScript) / python learning
+   ========================================================= */
+
+
+/* =========================================================
+   1. GENERAL / RESET STYLES
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    color: #1e293b;
+    background-color: #f8fafc;
+}
+
+
+/* =========================================================
+   2. HEADER
+   ========================================================= */
+
+header {
+    background: #0f172a;
+    color: #ffffff;
+    padding: 18px 8%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.15);
+}
+
+
+/* =========================================================
+   3. NAVIGATION BAR
+   ========================================================= */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    transition: color 0.3s ease, transform 0.3s ease;
+    position: relative;
+}
+
+/* Navigation hover effect */
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #38bdf8;
+    left: 0;
+    bottom: -6px;
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #38bdf8;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+
+/* =========================================================
+   4. COMMON SECTION STYLES
+   ========================================================= */
+
+#home,
+#about,
+#education,
+#skills,
+#projects,
+#contact {
+    padding: 90px 8%;
+    scroll-margin-top: 75px;
+}
+
+#about,
+#education,
+#skills,
+#projects,
+#contact {
+    max-width: 1200px;
+    margin: auto;
+}
+
+#about h2,
+#education h2,
+#skills h2,
+#projects h2,
+#contact h2 {
+    text-align: center;
+    font-size: 34px;
+    color: #0f172a;
+    margin-bottom: 20px;
+}
+
+#about h2::after,
+#education h2::after,
+#skills h2::after,
+#projects h2::after,
+#contact h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: #0ea5e9;
+    margin: 10px auto 35px;
+    border-radius: 5px;
+}
+
+
+/* =========================================================
+   5. HOME SECTION
+   ========================================================= */
+
+#home {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #e0f2fe, #f8fafc);
+}
+
+.home-content {
+    width: 100%;
+    max-width: 1100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+/* Text area in Home section */
+.home-content h1 {
+    font-size: 48px;
+    color: #0f172a;
+    margin-bottom: 12px;
+}
+
+.home-content h1 span {
+    color: #0284c7;
+}
+
+.home-content h2 {
+    font-size: 26px;
+    color: #334155;
+    margin-bottom: 18px;
+}
+
+.home-content p {
+    max-width: 600px;
+    font-size: 18px;
+    color: #475569;
+    margin-bottom: 25px;
+}
+
+/* General button styling */
+.home-content a,
+.home-content button {
+    display: inline-block;
+    padding: 12px 28px;
+    background: #0284c7;
+    color: #ffffff;
+    text-decoration: none;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.home-content a:hover,
+.home-content button:hover {
+    background: #0369a1;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(2, 132, 199, 0.3);
+}
+
+
+/* =========================================================
+   6. PROFILE IMAGE AREA
+   ========================================================= */
+
+.profile-image {
+    width: 280px;
+    height: 280px;
+    min-width: 280px;
+    border-radius: 50%;
+    border: 7px solid #ffffff;
+    background: linear-gradient(135deg, #bae6fd, #e0f2fe);
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.18);
+
+    /* Keeps the area ready for your photo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+/*
+   If your HTML already contains an image inside
+   .profile-image, this will make it circular and responsive.
+*/
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+/* =========================================================
+   7. ABOUT SECTION
+   ========================================================= */
+
+#about {
+    background-color: #ffffff;
+    border-radius: 15px;
+}
+
+#about p {
+    max-width: 850px;
+    margin: auto;
+    text-align: center;
+    font-size: 17px;
+    color: #475569;
+    line-height: 1.9;
+}
+
+
+/* =========================================================
+   8. EDUCATION SECTION
+   ========================================================= */
+
+#education {
+    background-color: #f8fafc;
+}
+
+.education-card {
+    max-width: 750px;
+    margin: 20px auto 0;
+    padding: 30px;
+    background: #ffffff;
+    border-left: 5px solid #0284c7;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(15, 23, 42, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.education-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.14);
+}
+
+.education-card h3 {
+    color: #0f172a;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.education-card p {
+    color: #64748b;
+    margin: 6px 0;
+    font-size: 16px;
+}
+
+
+/* =========================================================
+   9. SKILLS SECTION
+   ========================================================= */
+
+#skills {
+    background-color: #ffffff;
+}
+
+.skills-container {
+    max-width: 950px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 20px;
+}
+
+.skill {
+    background: #f0f9ff;
+    border: 1px solid #bae6fd;
+    color: #075985;
+    padding: 18px 15px;
+    border-radius: 12px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.skill:hover {
+    background: #0284c7;
+    color: #ffffff;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px rgba(2, 132, 199, 0.25);
+}
+
+
+/* =========================================================
+   10. PROJECTS SECTION
+   ========================================================= */
+
+#projects {
+    background-color: #f8fafc;
+}
+
+#projects {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+/* Keep the heading across the complete section */
+#projects h2 {
+    grid-column: 1 / -1;
+}
+
+.project-card {
+    background: #ffffff;
+    padding: 28px;
+    border-radius: 14px;
+    border-top: 4px solid #0284c7;
+    box-shadow: 0 5px 20px rgba(15, 23, 42, 0.08);
+    transition: all 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(15, 23, 42, 0.15);
+}
+
+.project-card h3 {
+    color: #0f172a;
+    font-size: 21px;
+    margin-bottom: 12px;
+}
+
+.project-card p {
+    color: #64748b;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   11. CONTACT SECTION
+   ========================================================= */
+
+#contact {
+    background-color: #ffffff;
+    text-align: center;
+}
+
+#contact p {
+    color: #475569;
+    font-size: 17px;
+    margin: 10px 0;
+}
+
+#contact a {
+    color: #0284c7;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+#contact a:hover {
+    color: #0369a1;
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   12. FOOTER
+   ========================================================= */
+
+footer {
+    background: #0f172a;
+    color: #cbd5e1;
+    text-align: center;
+    padding: 25px 15px;
+    font-size: 15px;
+}
+
+footer a {
+    color: #38bdf8;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   13. RESPONSIVE DESIGN - TABLETS
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    header {
+        padding: 16px 5%;
+    }
+
+    nav ul {
+        gap: 18px;
+    }
+
+    nav ul li a {
+        font-size: 14px;
+    }
+
+    #home {
+        padding: 70px 5%;
+    }
+
+    .home-content {
+        gap: 35px;
+    }
+
+    .home-content h1 {
+        font-size: 38px;
+    }
+
+    .home-content h2 {
+        font-size: 22px;
+    }
+
+    .profile-image {
+        width: 230px;
+        height: 230px;
+        min-width: 230px;
+    }
+
+    #about,
+    #education,
+    #skills,
+    #projects,
+    #contact {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+}
+
+
+/* =========================================================
+   14. RESPONSIVE DESIGN - MOBILE
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+    header {
+        padding: 15px 4%;
+    }
+
+    /* Navigation becomes vertically arranged */
+    nav {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px 18px;
+    }
+
+    nav ul li a {
+        font-size: 13px;
+    }
+
+    /* Home section */
+    #home {
+        min-height: auto;
+        padding: 70px 5%;
+    }
+
+    .home-content {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 35px;
+    }
+
+    .home-content h1 {
+        font-size: 32px;
+    }
+
+    .home-content h2 {
+        font-size: 20px;
+    }
+
+    .home-content p {
+        font-size: 16px;
+    }
+
+    /* Profile image */
+    .profile-image {
+        width: 200px;
+        height: 200px;
+        min-width: 200px;
+    }
+
+    /* Section headings */
+    #about h2,
+    #education h2,
+    #skills h2,
+    #projects h2,
+    #contact h2 {
+        font-size: 28px;
+    }
+
+    /* Education card */
+    .education-card {
+        padding: 22px;
+    }
+
+    /* Skills */
+    .skills-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .skill {
+        padding: 15px 8px;
+        font-size: 14px;
+    }
+
+    /* Projects become one column */
+    #projects {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card {
+        padding: 22px;
+    }
+
+    /* Common section spacing */
+    #about,
+    #education,
+    #skills,
+    #projects,
+    #contact {
+        padding-top: 65px;
+        padding-bottom: 65px;
+    }
+}
+
+
+/* =========================================================
+   15. EXTRA SMALL MOBILE DEVICES
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+    nav ul {
+        gap: 8px 12px;
+    }
+
+    nav ul li a {
+        font-size: 12px;
+    }
+
+    .home-content h1 {
+        font-size: 28px;
+    }
+
+    .home-content h2 {
+        font-size: 18px;
+    }
+
+    .profile-image {
+        width: 170px;
+        height: 170px;
+        min-width: 170px;
+    }
+
+    .skills-container {
+        grid-template-columns: 1fr;
+    }
+
+    .skill {
+        width: 100%;
+    }
+}
